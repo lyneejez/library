@@ -1,0 +1,32 @@
+<h1>Edit book</h1>
+<form action="/<%= book.id %>/edit" method="POST">
+    <div>
+        <label for="title">title:</label>
+        <input type="text" id="book" name="title" value="<%= book.title %>">
+    </div>
+    <div>
+        <label for="title">category:</label>
+        <select name="category_id" class="form-select">
+            <option value=" ">select category</option>
+            <% categories.forEach(function(category) { %>                    
+                <option <%= book.category_id == category.category_id ? 'selected' : '' %> value="<%= category.category_id %>">
+                    <%= category.category_name %>
+                </option>
+
+            <% }) %>
+        </select>
+    </div>
+    
+    <div>
+        <label for="title">author:</label>
+        <select name="author_id" class="form-select">
+            <option value=" ">select author</option>
+            <% authors.forEach(function(author) { %>
+                <option <%= book.author_id == author.author_id ? 'selected' : '' %> value="<%= author.author_id %>">
+                    <%= author.author_name %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+    <input type="submit" value="save"/>
+</form>

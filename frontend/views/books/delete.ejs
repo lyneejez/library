@@ -1,0 +1,22 @@
+<h2>delete</h2>
+<form method="post" action="/delete" class="mb-3" action ="/book/<%= book.id %>/delete">
+    <div class="mb-3">
+        <label for="name">book</label>
+        <input  type="text" name="book" value="<%= book.book %>">
+    </div>
+    <div class="mb-3">
+        <label for="authors">author_id</label>
+        <input  type="number" name="authors_id" value="<%= book.author_id %>">
+    </div>
+    <div class="mb-3">
+        <label for="category_id">category_id</label>
+        <input  type="number" name="category_id" value="<%= book.category_id %>">
+    </div>
+    <div class="mb-3">
+        <label for="title">title</label>
+        <input  type="text" name="title" value="<%= book.title %>">
+    </div>
+    
+    <input  type="submit" class="btn btn-sm btn-primary" value="submit">
+
+    </form>
